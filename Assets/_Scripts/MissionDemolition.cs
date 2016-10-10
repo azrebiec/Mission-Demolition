@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI; // This line enables use of UGUI features. 
 public enum GameMode{
 	idle,
 	playing,
@@ -11,8 +12,8 @@ public class MissionDemolition : MonoBehaviour {
 
 	// fields set in the Unity Inspector pane
 	public GameObject[] castles; // An array of the castles
-	public GUIText gtLevel; // The GT_Level GUIText
-	public GUIText gtScore; // The GT_Score GUIText
+	public Text gtLevel; // The GT_Level Text
+	public Text gtScore; // The GT_Score Text
 	public Vector3 castlePos; // The place to put castles
 
 	public bool _____________________________;
@@ -56,7 +57,7 @@ public class MissionDemolition : MonoBehaviour {
 		mode = GameMode.playing;
 	}
 	void ShowGT() {
-		// Show the data in the GUITexts
+		// Show the data in the Texts
 		gtLevel.text = "Level: "+(level+1)+" of "+levelMax;
 		gtScore.text = "Shots Taken: "+shotsTaken;
 	}
